@@ -1,0 +1,10 @@
+{
+  "name": "morphii-api-samples",
+  "version": "0.0.1",
+  "description": "This package includes sample code for using the Morphii APIs.",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.10.0",
+    "node-rest-client": "^1.8.0"
+  }
+}
