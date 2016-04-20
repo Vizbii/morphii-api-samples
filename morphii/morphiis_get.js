@@ -30,9 +30,35 @@ client.get(url, args, function(data, response) {
 });
 
 // Get your Morphii records.
-url = config.BASE_URL + "/morphii/v1/morphiis?&accountId=" + config.ACCOUNT_ID + "&twitterId=66772";
+url = config.BASE_URL + "/morphii/v1/morphiis?&accountId=" + config.ACCOUNT_ID;
 client.get(url, args, function(data, response) {
   console.log("GET - Morphiis call - statusCode: " + response.statusCode + ", statusMessage: " + response.statusMessage);
+  if (data && response.statusCode == 200) {
+    console.log("By Account Id: " + JSON.stringify(data, null, 2));
+  }
+  else {
+    // Error getting morphii records.
+    errorHandler(data);
+  }
+});
+
+// Get a specific group of Morphiis.
+url = config.BASE_URL + "/morphii/v1/morphiis?&accountId=" + config.ACCOUNT_ID + "&id=6117030182332137472";
+client.get(url, args, function(data, response) {
+  console.log("GET - Morphiis call (by Id) - statusCode: " + response.statusCode + ", statusMessage: " + response.statusMessage);
+  if (data && response.statusCode == 200) {
+    console.log("By Account Id: " + JSON.stringify(data, null, 2));
+  }
+  else {
+    // Error getting morphii records.
+    errorHandler(data);
+  }
+});
+
+// Get a specific Morphii.
+url = config.BASE_URL + "/morphii/v1/morphiis?&accountId=" + config.ACCOUNT_ID + "&id=6117030182332137472&name=Surprised";
+client.get(url, args, function(data, response) {
+  console.log("GET - Morphiis call (by Id-name) - statusCode: " + response.statusCode + ", statusMessage: " + response.statusMessage);
   if (data && response.statusCode == 200) {
     console.log("By Account Id: " + JSON.stringify(data, null, 2));
   }
