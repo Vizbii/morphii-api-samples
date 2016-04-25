@@ -43,7 +43,7 @@ client.get(url, args, function(data, response) {
 });
 
 // Get a specific group of Morphiis.
-url = config.BASE_URL + "/morphii/v1/morphiis?&accountId=" + config.ACCOUNT_ID + "&id=6117030182332137472";
+url = config.BASE_URL + "/morphii/v1/morphiis/6117030182332137472?&accountId=" + config.ACCOUNT_ID;
 client.get(url, args, function(data, response) {
   console.log("GET - Morphiis call (by Id) - statusCode: " + response.statusCode + ", statusMessage: " + response.statusMessage);
   if (data && response.statusCode == 200) {
@@ -56,7 +56,7 @@ client.get(url, args, function(data, response) {
 });
 
 // Get a specific Morphii.
-url = config.BASE_URL + "/morphii/v1/morphiis?&accountId=" + config.ACCOUNT_ID + "&id=6117030182332137472&name=Surprised";
+url = config.BASE_URL + "/morphii/v1/morphiis/6117030182332137472/Surprised?&accountId=" + config.ACCOUNT_ID;
 client.get(url, args, function(data, response) {
   console.log("GET - Morphiis call (by Id-name) - statusCode: " + response.statusCode + ", statusMessage: " + response.statusMessage);
   if (data && response.statusCode == 200) {
